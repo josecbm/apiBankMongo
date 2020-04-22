@@ -15,4 +15,5 @@ route.post('/',async(req,res)=>{
     console.log(transModel);
     res.json(transModel);
 });
+route.get('/')
 module.exports = route;
