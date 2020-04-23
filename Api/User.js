@@ -14,8 +14,10 @@ route.post('/',async(req,res)=>{
     user.correo = correo;
     user.password = password;
     let userModel = new User(user);
-    await userModel.save();
+   // await userModel.save();
     console.log(userModel);
     res.json(userModel);
 });
+
+ 
 module.exports = route;
