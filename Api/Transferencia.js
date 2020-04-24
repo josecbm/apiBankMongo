@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Transferencia = require('../DB/User');
+const Transferencia = require('../DB/Transferencia');
 const route = express.Router();
 
 route.post('/',async(req,res)=>{
@@ -9,7 +9,7 @@ route.post('/',async(req,res)=>{
     trans.origen = origen;
     trans.destino = destino;
     trans.cantidad = cantidad;
-    trans.fecha_transaccion;
+    trans.fecha_transaccion = fecha_transaccion;
     let transModel = new Transferencia(trans);
     await transModel.save();
     console.log(transModel);

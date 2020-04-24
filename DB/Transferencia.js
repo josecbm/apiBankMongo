@@ -2,13 +2,18 @@ const mongoose = require('mongoose');
 
 const transfer = new mongoose.Schema({
     origen:{
-        noCuenta: Number, required : true
+        type:Number
     },
     destino:{
-        noCuenta: Number , required : true
+        type:Number
     },
-    cantidad:Number,
-    fecha_transaccion:Date
+    cantidad:{
+        type:Number
+    },
+    fecha:{
+        type:Date , default:Date.now
+    }
+
 })
 
 module.exports = Transferencia = mongoose.model('transferencia',transfer);
