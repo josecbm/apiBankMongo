@@ -24,4 +24,14 @@ const user = new mongoose.Schema({
     }
 })
 
+// const userModel = mongoose.model("user",{
+//     firstname:String,
+//     lastname:String,
+//     dpi:Number,
+//     noCuenta:Number,
+//     saldoInicial:Number,
+//     correo:Number,
+//     password:String
+// });
+
 module.exports = User = mongoose.model('user',user);

@@ -18,6 +18,22 @@ route.post('/',async(req,res)=>{
     console.log(userModel);
     res.json(userModel);
 });
-
+route.get('/',async(req,res)=>{
+    console.log('entra en get de usuario');
+    try{
+        var user = await User.find().exec();
+        res.send(user);
+    }catch(error){
+        res.status(500).send(error);
+    }
+});
+route.get('/:id',async(req,res)=>{
+    try{
+        var user = await User.findById(req.params.id).exec();
+        res.send(user);
+    }catch(error){
+        res.status(500).send(error);
+    }
+});
  
 module.exports = route;

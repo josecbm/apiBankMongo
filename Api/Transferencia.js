@@ -15,5 +15,20 @@ route.post('/',async(req,res)=>{
     console.log(transModel);
     res.json(transModel);
 });
-route.get('/')
+route.get('/',async(req,res)=>{
+    try{
+        var transfers = await Transferencia.find().exec();
+        res.send(transfers);
+    }catch(error){
+        res.status(500).send(error);
+    }
+});
+route.get('/:id',async(req,res)=>{
+    try{
+        var transf = await Transferencia.findById(req.params.id).exec();
+        res.send(transf);
+    }catch(error){
+        res.status(500).send(error);
+    }
+});
 module.exports = route;
